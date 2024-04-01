@@ -1,0 +1,6 @@
+@taskman_backend_HostAddress = http://localhost:5265
+
+GET {{taskman_backend_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
