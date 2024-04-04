@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using taskman_backend.Dtos.Board;
 using taskman_backend.Interfaces;
@@ -19,6 +20,7 @@ namespace taskman_backend.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<IActionResult> Get()
         {
             List<Board> boards = await _boardRepo.GetAll();
