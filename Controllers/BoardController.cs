@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using taskman_backend.Dtos.Board;
 using taskman_backend.Interfaces;
@@ -9,6 +10,7 @@ namespace taskman_backend.Controllers
 {
     [Route("api/board")]
     [ApiController]
+    [Authorize]
     public class BoardController : ControllerBase
     {
         private readonly IBoardRepository _boardRepo;
