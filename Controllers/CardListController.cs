@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using taskman_backend.Dtos.CardList;
 using taskman_backend.Helpers;
@@ -10,6 +11,7 @@ namespace taskman_backend.Controllers
 {
     [Route("api/cardlist")]
     [ApiController]
+    [Authorize]
     public class CardListController : ControllerBase
     {
         private readonly ICardListRepository _cardListRepo;
